@@ -1,6 +1,14 @@
 const express = require('express');
 
 const app = express();
+if(process.env.NODE_ENV == "development") {
+    console.log("Using development environment, CORS enabled");
+    const cors = require('cors');
+    app.use(cors({
+        origin: '*'
+    }
+    ));
+}
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

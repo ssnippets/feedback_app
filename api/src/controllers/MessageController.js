@@ -26,6 +26,7 @@ export default {
     async getMessages(req, res) {
         const MAX_MESSAGES = 100;
         try {
+            const count = await Message.count();
             const messages = await Message.findAll({
                 order: [['sent_at', 'DESC']],
                 limit: MAX_MESSAGES,
@@ -33,7 +34,7 @@ export default {
             });
             return res.status(200).send({
                 data: messages,
-                count: messages.length
+                count: count
             })
         } catch (e) {
             console.log(e);
