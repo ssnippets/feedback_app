@@ -48,7 +48,7 @@ resource "aws_security_group" "sg_lambda" {
     from_port        = 5432
     to_port          = 5432
     protocol         = "tcp"
-    cidr_blocks      = [aws_default_vpc.default.cidr_block]
+    cidr_blocks      = ["0.0.0.0/0"]
     # security_groups = [aws_security_group.sg_lambda.id]
 
     # security_group_id  = aws_security_group.sg_lambda.id
@@ -124,7 +124,7 @@ resource "aws_lambda_function" "feedback_app" {
   runtime = "nodejs14.x"
 
   role = aws_iam_role.lambda_exec.arn
-
+  timeout = 10
   environment {
     variables = {
       POSTGRES_DB = aws_db_instance.default.db_name

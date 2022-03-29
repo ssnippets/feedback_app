@@ -54,6 +54,12 @@ app.get('/messages', MessageController.getMessages);
 //   message: 'Hello World!',
 // }));
 
+if (process.env.NODE_ENV === "production"){
+  app.get('/', (req, res) => {
+    res.redirect('/p/static/index.html');
+  });
+}
+
 app.use('/static/', express.static(__dirname + '/dist'))
 app.use('/js/', express.static(__dirname + '/dist/js'))
 
