@@ -1,0 +1,9 @@
+variable "db_password" {
+  description = "RDS root user password"
+  default = "ASlightlyMoreSecurePasswordShouldGoHere..."
+  type        = string
+  sensitive   = true
+}
+
+//TO init...
+//NODE_ENV=remote DBPASS='ThatPasswordFromAbove...' sequelize-cli db:migrate --config ./src/config/config.js                 

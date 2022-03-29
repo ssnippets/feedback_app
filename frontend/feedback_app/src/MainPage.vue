@@ -1,6 +1,8 @@
 <script>
 import { ref, computed, onMounted, getCurrentInstance } from "vue";
-const API_LOC = "http://localhost:3000";
+
+const API_LOC=process.env.VUE_APP_API_LOC;
+
 
 export default {
   data() {

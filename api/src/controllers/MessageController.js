@@ -1,8 +1,5 @@
-import { Op } from 'sequelize';
-import model from '../models';
-
-const { Message } = model;
-
+const Message = require('../models/').Message;
+// import Message from '../models/Message';
 export default {
     async newMessage(req, res) {
         const { message, sender } = req.body;
@@ -16,7 +13,7 @@ export default {
             });
             return res.status(201).send({ message: "Message created successfully." });
         } catch (e) {
-            console.log(e);
+            console.error(e);
             return res.status(500)
                 .send(
                     { message: 'Could not perform operation at this time try again later.' });
@@ -37,7 +34,7 @@ export default {
                 count: count
             })
         } catch (e) {
-            console.log(e);
+            console.error(e);
             return res.status(500).send({
                 message: 'Error'
             })
