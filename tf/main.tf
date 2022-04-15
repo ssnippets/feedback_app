@@ -134,6 +134,18 @@ resource "aws_lambda_function" "feedback_app" {
       POSTGRES_PORT = aws_db_instance.default.port
       ENVIRONMENT = "production"
       NODE_ENV = "production"
+
+      # Email config:
+      SMTP_HOST = var.SMTP_HOST
+      SMTP_PORT = var.SMTP_PORT
+      SMTP_SECURE = var.SMTP_SECURE
+      SMTP_USERNAME = var.SMTP_USERNAME
+      SMTP_PASSWORD = var.SMTP_PASSWORD
+      SYSTEM_SENDER = var.SYSTEM_SENDER
+      SYSTEM_HOSTNAME = var.SYSTEM_HOSTNAME
+      END_DESTINATION = var.END_DESTINATION
+      DEST_SUBJECT = var.DEST_SUBJECT
+
     }
   }
 }

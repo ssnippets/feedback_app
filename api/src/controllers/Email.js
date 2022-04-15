@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-import * as Config from '../platformconfig';
+import * as Config from '../../platformconfig';
 
 /// end todo
 

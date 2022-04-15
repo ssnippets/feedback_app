@@ -2,7 +2,7 @@ const Message = require('../models/').Message;
 
 import { randomBytes } from 'crypto';
 import * as email from './Email';
-import * as Config from '../platformconfig';
+import * as Config from '../../platformconfig';
 
 let generate_random = () => {
     const buf = randomBytes(16);

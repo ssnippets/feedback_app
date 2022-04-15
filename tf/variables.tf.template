@@ -30,7 +30,7 @@ variable "SMTP_USERNAME"{
   type        = string
   sensitive   = true
 }
-variable "SMTP_PASS"{
+variable "SMTP_PASSWORD"{
   description = "Password for SMTP"
   default = ""
   type        = string
@@ -39,6 +39,12 @@ variable "SMTP_PASS"{
 variable "SYSTEM_SENDER"{
   description = "User/Email that sends out emails"
   default = "\"System User\" <system@dochound.us>"
+  type        = string
+  sensitive   = false
+}
+variable "SYSTEM_HOSTNAME"{
+  description = "Hostname to include in emails for validation"
+  default = "https://djowvbjbmc.execute-api.us-east-2.amazonaws.com/p"
   type        = string
   sensitive   = false
 }

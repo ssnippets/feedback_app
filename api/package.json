@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec babel-node index.js",
     "webpack": "webpack",
-    "babel": "rm -rf post_babel && npx babel index.js src/ --out-dir post_babel --copy-files && mkdir post_babel/src && cp ./package.json ./post_babel/ && mv `find post_babel -type d -maxdepth 1` post_babel/src/",
+    "babel": "rm -rf post_babel && npx babel index.js platformconfig.js src/ --out-dir post_babel --copy-files && mkdir post_babel/src && cp ./package.json ./post_babel/ && mv `find post_babel -type d -maxdepth 1` post_babel/src/",
     "build": "rollup --config rollup.config.js",
     "full_build": "rm -rf post_babel && npx babel index.js src --out-dir post_babel --copy-files --no-copy-ignored && cp -r node_modules ./post_babel && rollup --config rollup.config.js"
   },
