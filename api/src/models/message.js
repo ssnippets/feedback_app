@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   Message.init({
     sender: DataTypes.STRING,
     message: DataTypes.STRING,
-    sent_at: DataTypes.DATE
+    sent_at: DataTypes.DATE,
+    approved: DataTypes.BOOLEAN,
+    approval_code: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Message',

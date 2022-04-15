@@ -10,12 +10,21 @@ module.exports =
       "dialect": "postgres"
 
     },
+    "docker": {
+      "username": "exampleuser",
+      "password": "examplepass",
+      "database": "exampledb",
+      "port": "5432",
+      "host": "localhost",
+      "dialect": "postgres"
+
+    },
     "remote": {
       "username": "lambdauser",
-      "password": process.env.DBPASS,
+      "password": process.env.DB_PASS,
       "database": "database_production",
       "port": "5432",
-      "host": "18.191.2.47",
+      "host": process.env.DB_HOST,
       "dialect": "postgres"
     },
     "production": {

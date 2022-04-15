@@ -5,5 +5,54 @@ variable "db_password" {
   sensitive   = true
 }
 
+variable "SMTP_HOST"{
+  description = "Hostname for SMTP"
+  default = "smtp.mailgun.org"
+  type        = string
+  sensitive   = false
+}
+variable "SMTP_PORT"{
+  description = "Port for SMTP"
+  default = 465
+  type        = number
+  sensitive   = false
+}
+
+variable "SMTP_SECURE"{
+  description = "Use secure connection for SMPT (port 465)"
+  default = true
+  type        = bool
+  sensitive   = false
+}
+variable "SMTP_USERNAME"{
+  description = "Username for SMTP"
+  default = "XXXXXXXXXXXXXXXX"
+  type        = string
+  sensitive   = true
+}
+variable "SMTP_PASS"{
+  description = "Password for SMTP"
+  default = ""
+  type        = string
+  sensitive   = true
+}
+variable "SYSTEM_SENDER"{
+  description = "User/Email that sends out emails"
+  default = "\"System User\" <system@dochound.us>"
+  type        = string
+  sensitive   = false
+}
+variable "END_DESTINATION"{
+  description = "Email to send out validated messages to"
+  default = "\"Jorge Sanchez\" <jorge.ud@gmail.com>"
+  type        = string
+  sensitive   = false
+}
+variable "DEST_SUBJECT"{
+  description = "Subject to include in communications with the END_DESTINATION"
+  default = "Forwarded Constituent Message"
+  type        = string
+  sensitive   = false
+}
 //TO init...
 //NODE_ENV=remote DBPASS='ThatPasswordFromAbove...' sequelize-cli db:migrate --config ./src/config/config.js                 

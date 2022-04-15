@@ -49,6 +49,9 @@ import MessageController from './src/controllers/MessageController';
 // post up a message:
 app.post('/add_msg', MessageController.newMessage);
 app.get('/messages', MessageController.getMessages);
+
+app.get('/validate/:code', MessageController.validateCode);
+
 // Create a catch-all route for testing the installation.
 // app.get('*', (req, res) => res.status(200).send({
 //   message: 'Hello World!',

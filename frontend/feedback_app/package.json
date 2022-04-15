@@ -2,8 +2,10 @@
   "name": "feedback_app",
   "version": "0.0.0",
   "scripts": {
+    "serve": "vue-cli-service serve --watch --mode development",
+
     "dev": "vite",
-    "build": "vite build",
+    "build": "NODE_ENV=production vue-cli-service build --mode prod",
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
